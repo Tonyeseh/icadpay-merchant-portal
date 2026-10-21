@@ -1,0 +1,81 @@
+import type { PaymentLink } from "@/types";
+
+const now = Date.now();
+function isoDaysAgo(days: number) {
+  return new Date(now - days * 24 * 60 * 60 * 1000).toISOString();
+}
+
+export const paymentLinks: PaymentLink[] = [
+  {
+    id: "pl_01HZ001",
+    slug: "ankara-bundle-pack",
+    name: "Ankara Bundle Pack",
+    description: "12 yards premium ankara, mixed prints",
+    amount: 25_000_00,
+    currency: "NGN",
+    redirectUrl: "https://lagosthreadworks.ng/thanks",
+    createdAt: isoDaysAgo(28),
+    active: true,
+    totalCollected: 875_000_00,
+    paymentCount: 35,
+  },
+  {
+    id: "pl_01HZ002",
+    slug: "tailoring-deposit",
+    name: "Tailoring deposit",
+    description: "Initial deposit for bespoke tailoring orders",
+    amount: 10_000_00,
+    currency: "NGN",
+    createdAt: isoDaysAgo(54),
+    active: true,
+    totalCollected: 420_000_00,
+    paymentCount: 42,
+  },
+  {
+    id: "pl_01HZ003",
+    slug: "donation-festival-2026",
+    name: "Festival 2026 donation",
+    description: "Customer-chosen amount for community fashion festival",
+    amount: null,
+    currency: "NGN",
+    createdAt: isoDaysAgo(11),
+    active: true,
+    totalCollected: 215_500_00,
+    paymentCount: 73,
+  },
+  {
+    id: "pl_01HZ004",
+    slug: "agbada-classic",
+    name: "Classic Agbada",
+    amount: 85_000_00,
+    currency: "NGN",
+    createdAt: isoDaysAgo(120),
+    active: false,
+    totalCollected: 1_530_000_00,
+    paymentCount: 18,
+  },
+  {
+    id: "pl_01HZ005",
+    slug: "school-fees-q2",
+    name: "School fees — Q2",
+    amount: 145_000_00,
+    currency: "NGN",
+    redirectUrl: "https://lagosthreadworks.ng/portal",
+    createdAt: isoDaysAgo(67),
+    active: true,
+    totalCollected: 2_320_000_00,
+    paymentCount: 16,
+  },
+  {
+    id: "pl_01HZ006",
+    slug: "monthly-subscription",
+    name: "Style box (monthly)",
+    description: "Recurring monthly style box subscription",
+    amount: 18_500_00,
+    currency: "NGN",
+    createdAt: isoDaysAgo(8),
+    active: true,
+    totalCollected: 92_500_00,
+    paymentCount: 5,
+  },
+];
