@@ -63,15 +63,46 @@ export interface PaymentLink {
   paymentCount: number;
 }
 
+export type PayoutStatus = "Pending" | "Failed" | "Successful";
+export type LedgerBeneficiaryType = "Merchant" | "Subaccount";
+export type LedgerEntryType = "PaymentCaptured" | "PayoutDebit" | "PayoutReversal" | "Refund";
+
+export interface PayoutLedgerEntry {
+  id: string;
+  entryType: string;
+  amount: number;
+  currency: string;
+  sourceType: string;
+  sourceId: string;
+  createdAt: string;
+}
+
 export interface Payout {
   id: string;
+  beneficiaryType: string;
+  beneficiaryId: string;
+  beneficiaryName: string | null;
+  bankName: string | null;
+  accountNumber: string | null;
   amount: number;
-  status: "paid" | "processing" | "failed";
-  bankAccountId: string;
+  currency: string;
+  status: PayoutStatus | string;
+  reference: string | null;
   createdAt: string;
-  settledAt?: string;
-  reference: string;
-  transactionCount: number;
+  ledgerEntries?: PayoutLedgerEntry[];
+}
+
+export interface LedgerEntry {
+  id: string;
+  beneficiaryType: string;
+  beneficiaryId: string;
+  entryType: string;
+  amount: number;
+  currency: string;
+  sourceType: string;
+  sourceId: string;
+  payoutId: string | null;
+  createdAt: string;
 }
 
 export interface BankAccount {

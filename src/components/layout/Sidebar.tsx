@@ -6,6 +6,7 @@ import {
   LinkIcon,
   PieChartIcon,
   WalletIcon,
+  BookOpenIcon,
   SettingsIcon,
   ChevronLeftIcon,
   CircleHelpIcon,
@@ -32,7 +33,8 @@ const sections: {
       { to: "/customers", label: "Customers", Icon: UsersIcon },
       { to: "/payment-links", label: "Payment Links", Icon: LinkIcon },
       { to: "/subaccounts", label: "Subaccounts", Icon: PieChartIcon, anyOf: [PERMISSIONS["subaccounts.view"]] },
-      { to: "/payouts", label: "Payouts", Icon: WalletIcon },
+      { to: "/payouts", label: "Payouts", Icon: WalletIcon, anyOf: [PERMISSIONS["payouts.view"]] },
+      { to: "/ledger-entries", label: "Ledger", Icon: BookOpenIcon, anyOf: [PERMISSIONS["ledger_entries.view"]] },
     ],
   },
   {
