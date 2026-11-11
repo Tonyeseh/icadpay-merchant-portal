@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 
 const styles: Record<string, string> = {
   success: "bg-success/10 text-success ring-success/20",
+  successful: "bg-success/10 text-success ring-success/20",
   paid: "bg-success/10 text-success ring-success/20",
   active: "bg-success/10 text-success ring-success/20",
   approved: "bg-success/10 text-success ring-success/20",
@@ -36,7 +37,7 @@ export function StatusBadge({ status, className }: { status: string; className?:
     >
       <span className={cn(
         "size-1.5 rounded-full",
-        key === "success" || key === "paid" || key === "active" || key === "approved"
+        key === "success" || key === "successful" || key === "paid" || key === "active" || key === "approved"
           ? "bg-success"
           : key === "failed" || key === "rejected" || key === "blacklisted"
           ? "bg-destructive"

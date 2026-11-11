@@ -20,6 +20,8 @@ export const PERMISSIONS = {
   "subaccounts.update": "subaccounts.update",
   "subaccounts.delete": "subaccounts.delete",
   "transactions.view": "transactions.view",
+  "payouts.view": "payouts.view",
+  "ledger_entries.view": "ledger_entries.view",
   "developer.view_keys": "developer.view_keys",
   "developer.rotate_keys": "developer.rotate_keys",
   "developer.manage_callback": "developer.manage_callback",

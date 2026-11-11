@@ -21,6 +21,8 @@ import { CustomersPage } from "@/pages/customers/CustomersPage";
 import { CustomerDetailPage } from "@/pages/customers/CustomerDetailPage";
 import { PaymentLinksPage } from "@/pages/payment-links/PaymentLinksPage";
 import { PayoutsPage } from "@/pages/payouts/PayoutsPage";
+import { PayoutDetailPage } from "@/pages/payouts/PayoutDetailPage";
+import { LedgerEntriesPage } from "@/pages/ledger-entries/LedgerEntriesPage";
 import { SubaccountsPage } from "@/pages/subaccounts/SubaccountsPage";
 import { SettingsPage } from "@/pages/settings/SettingsPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
@@ -57,6 +59,8 @@ function App() {
               <Route path="/payment-links" element={<PaymentLinksPage />} />
               <Route path="/subaccounts" element={<SubaccountsPage />} />
               <Route path="/payouts" element={<PayoutsPage />} />
+              <Route path="/payouts/:id" element={<PayoutDetailPage />} />
+              <Route path="/ledger-entries" element={<LedgerEntriesPage />} />
               <Route path="/developers" element={<Navigate to="/settings/developers" replace />} />
               <Route path="/settings" element={<Navigate to="/settings/profile" replace />} />
               <Route path="/settings/:tab" element={<SettingsPage />} />
